@@ -25,9 +25,20 @@ var body = document.querySelector('body');
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
-  // inside, add each land as an article tag
-  // inside each article tag include an h1 with the name of the land
+  var section = document.createElement('section');
+  for(var i=0; i < lands.length; i++) {
+    // inside, add each land as an article tag
+    var article = document.createElement('article');
+
+    // inside each article tag include an h1 with the name of the lands
+    var h1 = document.createElement('h1');
+    h1.innerHTML = lands[i];
+    article.appendChild(h1);
+    section.appendChild(article);
+  }
+
   // append middle-earth to your document body
+  body.appendChild(section);
 }
 
 makeMiddleEarth();
