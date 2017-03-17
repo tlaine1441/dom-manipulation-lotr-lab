@@ -20,6 +20,12 @@ var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 
 
+//
+//
+//    I did a thing with traversing querySelectors
+//
+//
+
 // Part 1
 
 
@@ -108,7 +114,14 @@ beautifulStranger();
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
-}
+  var articleElement = document.querySelector('article');
+  var hobbits = document.querySelectorAll('article')[0].querySelector('ul');
+  console.log(hobbits);
+  articleElement.removeChild(hobbits);
+  var rivendell = document.querySelectorAll('article')[1];
+  rivendell.appendChild(hobbits);
+ }
+leaveTheShire();
 
 
 // Part 7
@@ -116,7 +129,11 @@ function leaveTheShire() {
 
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
+  var theFellowship = document.createElement('div');
+  var hobbits = document.querySelectorAll('ul')[0];
+  console.log(hobbits);
   // add each hobbit and buddy one at a time to 'the-fellowship'
+
   // after each character is added make an alert that they have joined your party
 }
 
