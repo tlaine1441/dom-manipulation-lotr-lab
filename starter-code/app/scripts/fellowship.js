@@ -40,7 +40,6 @@ function makeMiddleEarth() {
   // append middle-earth to your document body
   body.appendChild(sectionElement);
 }
-
 makeMiddleEarth();
 
 
@@ -52,24 +51,30 @@ function makeHobbits() {
   for(var i=0; i < hobbits.length; i++) {
     var liElement = document.createElement('li');
     // give each hobbit a class of hobbit
-    liElement.className = "hobbit";
+    liElement.className = 'hobbits';
     liElement.innerHTML = hobbits[i];
     ulElement.appendChild(liElement);
   }
   var theShire = document.querySelector('article');
   theShire.appendChild(ulElement);
 }
-
 makeHobbits();
 // Part 3
 
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+  var divElement = document.createElement('div');
   // give the div a class of 'magic-imbued-jewelry'
+  divElement.className = 'magic-imbued-jewelry';
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  divElement.addEventListener("click", function() {
+    nazgulScreech();
+  });
   // add the ring as a child of Frodo
+  var frodo = document.querySelectorAll("article")[0].querySelector("li");
+  frodo.appendChild(divElement);
 }
-
+keepItSecretKeepItSafe();
 
 // Part 4
 
