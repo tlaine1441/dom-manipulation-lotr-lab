@@ -22,7 +22,7 @@ var body = document.querySelector('body');
 
 //
 //
-//    I did a thing with traversing querySelectors
+//    I did a thing with querySelectors...
 //
 //
 
@@ -65,6 +65,7 @@ function makeHobbits() {
   theShire.appendChild(ulElement);
 }
 makeHobbits();
+
 // Part 3
 
 function keepItSecretKeepItSafe() {
@@ -136,13 +137,13 @@ leaveTheShire();
     for (var i=0; i < characters.length; i++) {
       ulElement.appendChild(characters[i]);
       // after each character is added make an alert that they have joined your party
-      //alert(characters[i].textContent + " was added to The Fellowship");
+      alert(characters[i].textContent + " was added to The Fellowship");
     }
     theFellowship.appendChild(ulElement);
     var rivendell = document.querySelectorAll('article')[1];
     rivendell.appendChild(theFellowship);
   }
-  forgeTheFellowShip();
+forgeTheFellowShip();
 
 
 // Part 8
@@ -168,6 +169,8 @@ function hornOfGondor() {
   // put a linethrough on boromir's name
   boromir.style.textDecoration = "line-through";
   // Remove Boromir from the Fellowship
+  document.querySelectorAll('.buddies')[3].remove();
+
 }
 hornOfGondor();
 
@@ -231,3 +234,5 @@ function thereAndBackAgain() {
   }
 }
 thereAndBackAgain();
+
+
