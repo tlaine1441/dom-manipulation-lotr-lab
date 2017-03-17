@@ -97,11 +97,12 @@ makeBuddies();
 
 // Part 5
 
-
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+  var textNode = document.querySelectorAll('article')[1].querySelectorAll('li')[3];
+  textNode.innerHTML = 'Aragorn';
 }
-
+beautifulStranger();
 
 // Part 6
 
