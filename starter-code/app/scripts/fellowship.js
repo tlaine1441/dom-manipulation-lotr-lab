@@ -25,20 +25,20 @@ var body = document.querySelector('body');
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
-  var section = document.createElement('section');
+  var sectionElement = document.createElement('section');
   for(var i=0; i < lands.length; i++) {
     // inside, add each land as an article tag
-    var article = document.createElement('article');
+    var articleElement = document.createElement('article');
 
     // inside each article tag include an h1 with the name of the lands
-    var h1 = document.createElement('h1');
-    h1.innerHTML = lands[i];
-    article.appendChild(h1);
-    section.appendChild(article);
+    var h1Element = document.createElement('h1');
+    h1Element.innerHTML = lands[i];
+    articleElement.appendChild(h1Element);
+    sectionElement.appendChild(articleElement);
   }
 
   // append middle-earth to your document body
-  body.appendChild(section);
+  body.appendChild(sectionElement);
 }
 
 makeMiddleEarth();
@@ -48,10 +48,19 @@ makeMiddleEarth();
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
-  // give each hobbit a class of hobbit
+  var ulElement = document.createElement('ul');
+  for(var i=0; i < hobbits.length; i++) {
+    var liElement = document.createElement('li');
+    // give each hobbit a class of hobbit
+    liElement.className = "hobbit";
+    liElement.innerHTML = hobbits[i];
+    ulElement.appendChild(liElement);
+  }
+  var theShire = document.querySelector('article');
+  theShire.appendChild(ulElement);
 }
 
-
+makeHobbits();
 // Part 3
 
 function keepItSecretKeepItSafe() {
