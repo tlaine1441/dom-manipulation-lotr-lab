@@ -133,6 +133,7 @@ leaveTheShire();
     // add each hobbit and buddy one at a time to 'the-fellowship'
     var characters = document.querySelectorAll('li');
     for (var i=0; i < characters.length; i++) {
+      characters[i].className = "character";
       ulElement.appendChild(characters[i]);
       // after each character is added make an alert that they have joined your party
       alert(characters[i].textContent + " was added to The Fellowship");
@@ -146,13 +147,16 @@ leaveTheShire();
 
 // Part 8
 
-
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  var gandalf = document.querySelectorAll('.character')[0];
+  gandalf.textContent = 'Gandalf the White';
   // apply style to the element
   // make the background 'white', add a grey border
+  gandalf.style.background = 'white';
+  gandalf.style.border = '3px solid grey';
 }
-
+theBalrog();
 
 // Part 9
 
