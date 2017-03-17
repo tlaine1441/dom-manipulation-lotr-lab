@@ -136,7 +136,7 @@ leaveTheShire();
       characters[i].className = "character";
       ulElement.appendChild(characters[i]);
       // after each character is added make an alert that they have joined your party
-      alert(characters[i].textContent + " was added to The Fellowship");
+      //alert(characters[i].textContent + " was added to The Fellowship");
     }
     theFellowship.appendChild(ulElement);
     var rivendell = document.querySelectorAll('article')[1];
@@ -175,9 +175,19 @@ hornOfGondor();
 
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
+  var fellowship = document.getElementsByTagName('ul')[2];
+  var froto = document.querySelectorAll('.character')[5];
+  var sam = document.querySelectorAll('.character')[6];
+  for(var i=0; i < 2; i++) {
+   fellowship.removeChild(fellowship.childNodes[5]);
+  }
+  var mordor = document.querySelectorAll('article')[2];
+  mordor.appendChild(froto);
+  mordor.appendChild(sam);
   // add a div with an id of 'mount-doom' to Mordor
+  mordor.id = 'mount-doom';
 }
-
+itsDangerousToGoAlone();
 
 // Part 11
 
